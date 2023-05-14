@@ -15,7 +15,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="fifa23-issuefront" options="-parameters" />
-      <module name="fifa23-issuegenerator" options="-parameters" />
+      <module name="fifa23-issuegenerator" options="" />
       <module name="fifa23-issueservice" options="-parameters" />
     </option>
   </component>
