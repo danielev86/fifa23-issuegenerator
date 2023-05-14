@@ -1,10 +1,14 @@
 package com.danielev86.fifa23issueservice.rest.bean;
 
 import com.opencsv.bean.CsvBindByPosition;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serial;
 import java.io.Serializable;
 
+@Data
+@EqualsAndHashCode
 public class PlayerDTO implements Serializable {
 
     @Serial
@@ -21,35 +25,4 @@ public class PlayerDTO implements Serializable {
 
     private Integer playerNumber;
 
-    public int getIssueCode() {
-        return issueCode;
-    }
-
-    public void setIssueCode(int issueCode) {
-        this.issueCode = issueCode;
-    }
-
-    public String getIssueType() {
-        return issueType;
-    }
-
-    public void setIssueType(String issueType) {
-        this.issueType = issueType;
-    }
-
-    public String getIssueDescription() {
-        return issueDescription;
-    }
-
-    public void setIssueDescription(String issueDescription) {
-        this.issueDescription = issueDescription;
-    }
-
-    public Integer getPlayerNumber() {
-        return playerNumber;
-    }
-
-    public void setPlayerNumber(Integer playerNumber) {
-        this.playerNumber = playerNumber;
-    }
 }
