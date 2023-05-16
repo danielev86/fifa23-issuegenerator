@@ -5,6 +5,7 @@
             <li th:classappend="${activeVar eq 'index' ? 'active' : ''}"><a th:href="@{/}" class="nav-link">Home</a></li>
             <li th:classappend="${activeVar eq 'players' ? 'active' : ''}"><a th:href="@{/players}" class="nav-link">Players</a></li>
             <li th:classappend="${activeVar eq 'teams' ? 'active' : ''}"><a th:href="@{/teams}" class="nav-link">Teams</a></li>
+            <li th:classappend="${activeVar eq 'teamsAvg' ? 'active' : ''}"><a th:href="@{/teamsAvg}" class="nav-link">Teams AVG</a></li>
             <li th:classappend="${activeVar eq 'help' ? 'active' : ''}"><a th:href="@{/help}" class="nav-link">Help</a></li>
         </ul>
     </nav>
