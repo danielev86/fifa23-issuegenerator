@@ -1,6 +1,5 @@
 package com.danielev86.fifa23issueservice.rest.bean;
 
-
 import com.opencsv.bean.CsvBindByPosition;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,10 +9,10 @@ import java.io.Serializable;
 
 @Data
 @EqualsAndHashCode
-public class TeamDTO implements Serializable {
+public class PlayerIssueDTO implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 2649937780567140449L;
+    private static final long serialVersionUID = 773297834320026526L;
 
     @CsvBindByPosition(position = 0)
     private int issueCode;
@@ -24,7 +23,6 @@ public class TeamDTO implements Serializable {
     @CsvBindByPosition(position = 2)
     private String issueDescription;
 
-    @CsvBindByPosition(position = 3)
-    private String issueFullDescription;
+    private Integer playerNumber;
 
 }

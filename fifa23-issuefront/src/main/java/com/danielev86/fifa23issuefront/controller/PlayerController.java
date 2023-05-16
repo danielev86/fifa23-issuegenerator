@@ -1,7 +1,7 @@
 package com.danielev86.fifa23issuefront.controller;
 
 import com.danielev86.fifa23issuefront.client.IPlayerClient;
-import com.danielev86.fifa23issuefront.controller.bean.PlayerDTO;
+import com.danielev86.fifa23issuefront.controller.bean.PlayerIssueDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class PlayerController {
 
     @GetMapping("/playersissue")
     public String getPlayerIssue(Model model){
-        PlayerDTO playerResult = playerClient.getPlayerIssue();
+        PlayerIssueDTO playerResult = playerClient.getPlayerIssue();
         model.addAttribute("playerResult", playerResult);
         return "players";
     }

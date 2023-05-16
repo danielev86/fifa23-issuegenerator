@@ -1,13 +1,13 @@
 package com.danielev86.fifa23issueservice.service;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamDTO;
+import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
 
 import java.util.Map;
 
 public interface IFootballService {
-    public Map<Integer, PlayerDTO> getMapPlayerIssuers();
+    public Map<Integer, PlayerIssueDTO> getMapPlayerIssuers();
 
-    public Map<Integer, TeamDTO> getMapFinancialIssuers();
+    public Map<Integer, TeamIssueDTO> getMapFinancialIssuers();
 
 }

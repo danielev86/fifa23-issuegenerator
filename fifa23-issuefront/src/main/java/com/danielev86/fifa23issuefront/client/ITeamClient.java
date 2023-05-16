@@ -1,9 +1,9 @@
 package com.danielev86.fifa23issuefront.client;
 
-import com.danielev86.fifa23issuefront.controller.bean.TeamDTO;
+import com.danielev86.fifa23issuefront.controller.bean.TeamIssueDTO;
 
 public interface ITeamClient {
 
-    TeamDTO getTeamIssue();
+    TeamIssueDTO getTeamIssue();
 
 }

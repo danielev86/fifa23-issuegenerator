@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @EqualsAndHashCode
-public class TeamDTO implements Serializable {
+public class TeamIssueDTO implements Serializable {
 
     private int issueCode;
 

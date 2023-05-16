@@ -1,7 +1,7 @@
 package com.danielev86.fifa23issueservice.rest;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamDTO;
+import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.service.IFootballService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +17,12 @@ public class FootballRestController {
     private IFootballService footballService;
 
     @GetMapping("/players/playerissue")
-    public PlayerDTO getPlayerIssue(){
-        Map<Integer, PlayerDTO> mapPlayers = footballService.getMapPlayerIssuers();
+    public PlayerIssueDTO getPlayerIssue(){
+        Map<Integer, PlayerIssueDTO> mapPlayers = footballService.getMapPlayerIssuers();
         int randomNum = ThreadLocalRandom.current().nextInt(1, mapPlayers.keySet().size() + 1);
-        PlayerDTO playerDTO = mapPlayers.get(randomNum);
+        PlayerIssueDTO playerDTO = mapPlayers.get(randomNum);
         if (playerDTO == null){
-            playerDTO = new PlayerDTO();
+            playerDTO = new PlayerIssueDTO();
             playerDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
         }else{
             playerDTO.setPlayerNumber(ThreadLocalRandom.current().nextInt(1,18));
@@ -31,12 +31,12 @@ public class FootballRestController {
     }
 
     @GetMapping("/teams/teamsissue")
-    public TeamDTO getTeamIssue(){
-        Map<Integer, TeamDTO> mapTeams = footballService.getMapFinancialIssuers();
+    public TeamIssueDTO getTeamIssue(){
+        Map<Integer, TeamIssueDTO> mapTeams = footballService.getMapFinancialIssuers();
         int randomNum = ThreadLocalRandom.current().nextInt(1, mapTeams.keySet().size() + 1);
-        TeamDTO teamDTO = mapTeams.get(randomNum);
+        TeamIssueDTO teamDTO = mapTeams.get(randomNum);
         if (teamDTO == null){
-            teamDTO = new TeamDTO();
+            teamDTO = new TeamIssueDTO();
             teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
         }
         return teamDTO;

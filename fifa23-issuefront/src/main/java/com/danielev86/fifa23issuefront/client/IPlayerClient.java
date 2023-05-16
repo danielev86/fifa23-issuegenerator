@@ -1,9 +1,9 @@
 package com.danielev86.fifa23issuefront.client;
 
-import com.danielev86.fifa23issuefront.controller.bean.PlayerDTO;
+import com.danielev86.fifa23issuefront.controller.bean.PlayerIssueDTO;
 
 public interface IPlayerClient {
 
-    PlayerDTO getPlayerIssue();
+    PlayerIssueDTO getPlayerIssue();
 
 }

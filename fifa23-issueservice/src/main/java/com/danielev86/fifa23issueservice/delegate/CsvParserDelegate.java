@@ -1,7 +1,7 @@
 package com.danielev86.fifa23issueservice.delegate;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamDTO;
+import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.helper.PathHelper;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -20,11 +20,11 @@ public class CsvParserDelegate {
 
     private static final Logger logger = LoggerFactory.getLogger(CsvParserDelegate.class);
 
-    public List<TeamDTO> findFinancialIssues(){
-        List<TeamDTO> financials = null;
+    public List<TeamIssueDTO> findFinancialIssues(){
+        List<TeamIssueDTO> financials = null;
         try(Reader reader = Files.newBufferedReader(PathHelper.fileFinancialIssuerPath())) {
-            CsvToBean<TeamDTO> csvToBean = new CsvToBeanBuilder<TeamDTO>(reader)
-                    .withType(TeamDTO.class)
+            CsvToBean<TeamIssueDTO> csvToBean = new CsvToBeanBuilder<TeamIssueDTO>(reader)
+                    .withType(TeamIssueDTO.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
             financials = csvToBean.parse();
@@ -34,11 +34,11 @@ public class CsvParserDelegate {
         return financials;
     }
 
-    public List<PlayerDTO> findPlayerIssues(){
-        List<PlayerDTO> players = null;
+    public List<PlayerIssueDTO> findPlayerIssues(){
+        List<PlayerIssueDTO> players = null;
         try(Reader reader = Files.newBufferedReader(PathHelper.filePlayerIssuerPath())) {
-            CsvToBean<PlayerDTO> csvToBean = new CsvToBeanBuilder<PlayerDTO>(reader)
-                    .withType(PlayerDTO.class)
+            CsvToBean<PlayerIssueDTO> csvToBean = new CsvToBeanBuilder<PlayerIssueDTO>(reader)
+                    .withType(PlayerIssueDTO.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
             players = csvToBean.parse();
