@@ -1,12 +1,16 @@
 package com.danielev86.fifa23issueservice.rest;
 
 import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.bean.TeamAvgDTO;
+import com.danielev86.fifa23issueservice.rest.bean.TeamDTO;
 import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.service.IFootballService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -40,6 +44,14 @@ public class FootballRestController {
             teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
         }
         return teamDTO;
+    }
+
+    @PostMapping("/teams/calculateavg")
+    public TeamDTO getCalculateAvgTeam(TeamAvgDTO teamValues){
+        BigDecimal avg = footballService.calculateAvgTeams(teamValues);
+        TeamDTO team = new TeamDTO();
+        team.setAvg(avg);
+        return team;
     }
 
 }
