@@ -1,16 +1,15 @@
 package com.danielev86.fifa23issueservice.service;
 
 import com.danielev86.fifa23issueservice.delegate.CalculatorDelegate;
-import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamAvgDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamAvgDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.delegate.CsvParserDelegate;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;

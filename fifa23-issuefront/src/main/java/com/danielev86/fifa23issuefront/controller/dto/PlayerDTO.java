@@ -1,8 +1,4 @@
-package com.danielev86.fifa23issuefront.controller.bean;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+package com.danielev86.fifa23issuefront.controller.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

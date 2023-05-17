@@ -1,7 +1,7 @@
 package com.danielev86.fifa23issuefront.client.impl;
 
 import com.danielev86.fifa23issuefront.client.IPlayerClient;
-import com.danielev86.fifa23issuefront.controller.bean.PlayerIssueDTO;
+import com.danielev86.fifa23issuefront.controller.dto.PlayerIssueDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

@@ -1,8 +1,8 @@
 package com.danielev86.fifa23issuefront.controller;
 
 import com.danielev86.fifa23issuefront.client.ITeamClient;
-import com.danielev86.fifa23issuefront.controller.bean.TeamDTO;
-import com.danielev86.fifa23issuefront.controller.bean.TeamIssueDTO;
+import com.danielev86.fifa23issuefront.controller.dto.TeamDTO;
+import com.danielev86.fifa23issuefront.controller.dto.TeamIssueDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

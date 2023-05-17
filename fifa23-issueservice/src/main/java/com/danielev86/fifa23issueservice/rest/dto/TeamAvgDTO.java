@@ -1,4 +1,4 @@
-package com.danielev86.fifa23issueservice.rest.bean;
+package com.danielev86.fifa23issueservice.rest.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package com.danielev86.fifa23issuefront.controller.bean;
+package com.danielev86.fifa23issuefront.controller.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @EqualsAndHashCode
-public class TeamIssueDTO implements Serializable {
+public class PlayerIssueDTO implements Serializable {
 
     private int issueCode;
 
@@ -15,6 +15,6 @@ public class TeamIssueDTO implements Serializable {
 
     private String issueDescription;
 
-    private String issueFullDescription;
+    private Integer playerNumber;
 
 }

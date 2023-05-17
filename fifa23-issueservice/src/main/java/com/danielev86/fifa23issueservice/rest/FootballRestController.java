@@ -1,9 +1,9 @@
 package com.danielev86.fifa23issueservice.rest;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamAvgDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamAvgDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.service.IFootballService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

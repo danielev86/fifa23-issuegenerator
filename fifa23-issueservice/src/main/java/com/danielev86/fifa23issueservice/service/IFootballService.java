@@ -1,8 +1,8 @@
 package com.danielev86.fifa23issueservice.service;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamAvgDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamAvgDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 
 import java.math.BigDecimal;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package com.danielev86.fifa23issueservice.delegate;
 
-import com.danielev86.fifa23issueservice.rest.bean.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.bean.TeamIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
+import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.helper.PathHelper;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
