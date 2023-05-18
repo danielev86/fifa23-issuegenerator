@@ -1,7 +1,6 @@
 package com.danielev86.fifa23issueservice.rest;
 
 import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.dto.TeamAvgDTO;
 import com.danielev86.fifa23issueservice.rest.dto.TeamDTO;
 import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.service.IFootballService;
@@ -44,14 +43,6 @@ public class FootballRestController {
             teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
         }
         return teamDTO;
-    }
-
-    @PostMapping("/teams/calculateavg")
-    public TeamDTO getCalculateAvgTeam(TeamAvgDTO teamValues){
-        BigDecimal avg = footballService.calculateAvgTeams(teamValues);
-        TeamDTO team = new TeamDTO();
-        team.setAvg(avg);
-        return team;
     }
 
 }

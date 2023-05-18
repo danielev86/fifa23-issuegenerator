@@ -2,7 +2,6 @@ package com.danielev86.fifa23issueservice.service;
 
 import com.danielev86.fifa23issueservice.delegate.CalculatorDelegate;
 import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
-import com.danielev86.fifa23issueservice.rest.dto.TeamAvgDTO;
 import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.delegate.CsvParserDelegate;
 import org.apache.commons.collections.CollectionUtils;
@@ -29,14 +28,6 @@ public class FootballServiceImpl implements IFootballService {
 
     public Map<Integer, TeamIssueDTO> getMapFinancialIssuers(){
         return csvParser.findFinancialIssues().stream().collect(Collectors.toMap(TeamIssueDTO::getIssueCode, Function.identity()));
-    }
-
-    public BigDecimal calculateAvgTeams(TeamAvgDTO avgTeam){
-        BigDecimal value = null;
-        if (CollectionUtils.isNotEmpty(avgTeam.getValues())) {
-            value = calculatorDelegate.calculateAvg(avgTeam.getValues());
-        }
-        return value;
     }
 
 }

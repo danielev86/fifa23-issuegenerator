@@ -73,7 +73,9 @@
             <form action="#" th:action="@{/teams/teamissue}" method="get">
               <h1 class="text-white">Teams</h1>
               <h2 class="text-white">Issues Generator</h2>
-              <input type="image" id="image" alt="GO!" src="/images/logo_3.png" style="width:60%">
+              <button type="submit" style="background:none;border:none;">
+                <img alt="GO!" src="/images/logo_3.png"  style="width:100%"/>
+              </button>
             </form>
             <div th:if= "${teamData != null}">
               <h3 th:text="${teamData.issueType}" class="text-white"></h3>
@@ -90,23 +92,9 @@
   <!-- .site-wrap -->
 
   <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/js/jquery-ui.js"></script>
   <script src="/js/popper.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/owl.carousel.min.js"></script>
-  <script src="/js/jquery.stellar.min.js"></script>
-  <script src="/js/jquery.countdown.min.js"></script>
-  <script src="/js/bootstrap-datepicker.min.js"></script>
-  <script src="/js/jquery.easing.1.3.js"></script>
-  <script src="/js/aos.js"></script>
-  <script src="/js/jquery.fancybox.min.js"></script>
-  <script src="/js/jquery.sticky.js"></script>
-  <script src="/js/jquery.mb.YTPlayer.min.js"></script>
-
-
-  <script src="/js/main.js"></script>
-
 </body>
 
 </html>
