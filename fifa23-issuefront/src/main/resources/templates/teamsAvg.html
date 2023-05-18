@@ -69,29 +69,322 @@
     <div class="hero overlay" style="background-image: url('/images/bg_3.jpg');">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 text-center"style="margin-top:10%">
+            <label for="formationTypeSelection" class="text-white">Formation Type</label>
+            <select id="formationTypeSelection" class="form-select" aria-label="Default select example" onchange="selectedChange();">
+              <option>4-3-3</option>
+              <option selected>4-4-2</option>
+              <option>4-2-3-1</option>
+            </select>
             <h1 class="text-white" style="margin-top:10%;text-align: center;">Teams</h1>
             <h2 class="text-white" style="margin-top:10%;text-align: center;">AVG Team Calculator</h2>
-            <form action="#" th:action="@{/teamsAvg/avg}" method="post" th:object="${teamDTO}">
-              <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
-              <table>
-                <thead>
-                <tr>
-                  <th> Title</th>
-                  <th> Author</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="player, itemStat : *{players}">
-                  <td><input th:field="*{player[__${itemStat.index}__].numPosition}" /></td>
-                </tr>
-                </tbody>
-              </table>
+            <form action="#" th:action="@{/teamsAvg/avg}" method="post" th:object="${teamAvg}">
+              <div id="442template" style="display: block">
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput1">GK</label>
+                      <input id="teamAvgInput1" type="number" th:field="*{value1}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+
+                <!--DEFENSOR-->
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput2">RB</label>
+                      <input id="teamAvgInput2" type="number" th:field="*{value2}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput3">CB</label>
+                      <input id="teamAvgInput3" type="number" th:field="*{value3}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput4">CB</label>
+                      <input id="teamAvgInput4" type="number" th:field="*{value4}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput5">LB</label>
+                      <input id="teamAvgInput5" type="number" th:field="*{value5}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+
+                <!--MIDFIELDER-->
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput6">ED</label>
+                      <input id="teamAvgInput6" type="number" th:field="*{value6}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput7">CC</label>
+                      <input id="teamAvgInput7" type="number" th:field="*{value7}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput8">CC</label>
+                      <input id="teamAvgInput8" type="number" th:field="*{value8}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput9">ES</label>
+                      <input id="teamAvgInput9" type="number" th:field="*{value9}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+
+                <!--OFFENSIVE MIDFIELDER-->
+                <!--STRIKER-->
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput10">ATT</label>
+                      <input id="teamAvgInput10" type="number" th:field="*{value10}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput11">ATT</label>
+                      <input id="teamAvgInput11" type="number" th:field="*{value11}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-4"></div>
+                </div>
+              </div>
+
+              <div id="4231template" style="display: none">
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput1">GK</label>
+                      <input id="teamAvgInput1" type="number" th:field="*{value1}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+
+                <!--DEFENSOR-->
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput2">RB</label>
+                      <input id="teamAvgInput2" type="number" th:field="*{value2}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput3">CB</label>
+                      <input id="teamAvgInput3" type="number" th:field="*{value3}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput4">CB</label>
+                      <input id="teamAvgInput4" type="number" th:field="*{value4}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput5">LB</label>
+                      <input id="teamAvgInput5" type="number" th:field="*{value5}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+
+                <!--MIDFIELDER-->
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput6">CDC</label>
+                      <input id="teamAvgInput6" type="number" th:field="*{value6}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput7">CDC</label>
+                      <input id="teamAvgInput7" type="number" th:field="*{value7}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-4"></div>
+                </div>
+                <!--OFFENSIVE MIDFIELDER-->
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput8">AD</label>
+                      <input id="teamAvgInput8" type="number" th:field="*{value8}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput9">COC</label>
+                      <input id="teamAvgInput9" type="number" th:field="*{value9}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput10">AS</label>
+                      <input id="teamAvgInput10" type="number" th:field="*{value10}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+
+                <!--STRIKER-->
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput11">AD</label>
+                      <input id="teamAvgInput11" type="number" th:field="*{value11}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+              </div>
+
+              <div id="433template" style="display: none">
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput1">GK</label>
+                      <input id="teamAvgInput1" type="number" th:field="*{value1}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+
+                <!--DEFENSOR-->
+                <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput2">RB</label>
+                      <input id="teamAvgInput2" type="number" th:field="*{value2}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput3">CB</label>
+                      <input id="teamAvgInput3" type="number" th:field="*{value3}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput4">CB</label>
+                      <input id="teamAvgInput4" type="number" th:field="*{value4}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput5">LB</label>
+                      <input id="teamAvgInput5" type="number" th:field="*{value5}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+
+                <!--MIDFIELDER-->
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput6">CC</label>
+                      <input id="teamAvgInput6" type="number" th:field="*{value6}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput7">CC</label>
+                      <input id="teamAvgInput7" type="number" th:field="*{value7}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput8">CC</label>
+                      <input id="teamAvgInput8" type="number" th:field="*{value8}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+
+                <!--STRIKER-->
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput9">AD</label>
+                      <input id="teamAvgInput9" type="number" th:field="*{value9}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput11">AD</label>
+                      <input id="teamAvgInput11" type="number" th:field="*{value11}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group text-white text-center">
+                      <label for="teamAvgInput10">AS</label>
+                      <input id="teamAvgInput10" type="number" th:field="*{value10}" class="form-control" style="background-color: white!important; color: #0b0b0b !important;">
+                    </div>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Calculate AVG</button>
+                  </div>
+                </div>
+              </div>
+              <div th:if="${value != null}" class="row">
+                <div class="col-md-12">
+                  <div class="text-center">
+                    <h3 th:text="${value}" class="text-white"></h3>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
-
-
       </div>
     </div>
 
@@ -117,6 +410,20 @@
 
 
   <script src="/js/main.js"></script>
+  <script>
+    function selectedChange(){
+      var formations = ['4-4-2', '4-2-3-1', '4-3-3'];
+      var conceptName = $('#formationTypeSelection').find(":selected").val();
+      formations.forEach(element => {
+        var valueJql = element.replaceAll('-', '');
+        if (element === conceptName){
+          $('#' + valueJql + 'template').css('display', 'block');
+        }else{
+          $('#' + valueJql + 'template').css('display', 'none');
+        }
+      });
+    }
+  </script>
 
 </body>
 
