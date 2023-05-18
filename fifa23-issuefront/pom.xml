@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.danielev86</groupId>
         <artifactId>fifa23-issuegenerator</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.1.0-RELEASE</version>
     </parent>
     <groupId>com.danielev86</groupId>
     <artifactId>fifa23-issuefront</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0-RELEASE</version>
     <name>fifa23-issuefront</name>
     <description>fifa23-issuefront</description>
     <properties>
