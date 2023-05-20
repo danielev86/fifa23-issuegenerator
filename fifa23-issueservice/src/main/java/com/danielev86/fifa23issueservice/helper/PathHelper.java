@@ -17,4 +17,9 @@ public class PathHelper {
         return Paths.get(uri);
     }
 
+    public static Path fileTransfermarketPath() throws URISyntaxException {
+        URI uri = ClassLoader.getSystemResource("templates/csv/fifa23_transfermarket_issues.csv").toURI();
+        return Paths.get(uri);
+    }
+
 }

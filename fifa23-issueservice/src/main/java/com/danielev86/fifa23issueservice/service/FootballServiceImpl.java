@@ -4,6 +4,7 @@ import com.danielev86.fifa23issueservice.delegate.CalculatorDelegate;
 import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
 import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.delegate.CsvParserDelegate;
+import com.danielev86.fifa23issueservice.rest.dto.TransfermarketIssueDTO;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,10 @@ public class FootballServiceImpl implements IFootballService {
 
     public Map<Integer, TeamIssueDTO> getMapFinancialIssuers(){
         return csvParser.findFinancialIssues().stream().collect(Collectors.toMap(TeamIssueDTO::getIssueCode, Function.identity()));
+    }
+
+    public Map<Integer, TransfermarketIssueDTO> getTransfermarketdto(){
+        return csvParser.findMarketIssues().stream().collect(Collectors.toMap(TransfermarketIssueDTO::getIssueCode, Function.identity()));
     }
 
 }

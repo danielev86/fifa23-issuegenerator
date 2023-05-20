@@ -3,6 +3,7 @@ package com.danielev86.fifa23issueservice.delegate;
 import com.danielev86.fifa23issueservice.rest.dto.PlayerIssueDTO;
 import com.danielev86.fifa23issueservice.rest.dto.TeamIssueDTO;
 import com.danielev86.fifa23issueservice.helper.PathHelper;
+import com.danielev86.fifa23issueservice.rest.dto.TransfermarketIssueDTO;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import org.slf4j.Logger;
@@ -39,6 +40,20 @@ public class CsvParserDelegate {
         try(Reader reader = Files.newBufferedReader(PathHelper.filePlayerIssuerPath())) {
             CsvToBean<PlayerIssueDTO> csvToBean = new CsvToBeanBuilder<PlayerIssueDTO>(reader)
                     .withType(PlayerIssueDTO.class)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+            players = csvToBean.parse();
+        } catch (IOException|URISyntaxException e) {
+            logger.error("Error while reading csv file", e);
+        }
+        return players;
+    }
+
+    public List<TransfermarketIssueDTO> findMarketIssues(){
+        List<TransfermarketIssueDTO> players = null;
+        try(Reader reader = Files.newBufferedReader(PathHelper.fileTransfermarketPath())) {
+            CsvToBean<TransfermarketIssueDTO> csvToBean = new CsvToBeanBuilder<TransfermarketIssueDTO>(reader)
+                    .withType(TransfermarketIssueDTO.class)
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
             players = csvToBean.parse();

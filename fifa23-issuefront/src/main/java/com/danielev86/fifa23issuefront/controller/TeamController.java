@@ -2,6 +2,7 @@ package com.danielev86.fifa23issuefront.controller;
 
 import com.danielev86.fifa23issuefront.client.ITeamClient;
 import com.danielev86.fifa23issuefront.controller.dto.TeamIssueDTO;
+import com.danielev86.fifa23issuefront.controller.dto.TransfermarketIssueDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,13 @@ public class TeamController {
         TeamIssueDTO teamData = teamClient.getTeamIssue();
         model.addAttribute("teamData", teamData);
         return "teams";
+    }
+
+    @GetMapping("/teams/marketissue")
+    public String getMarketIssue(Model model){
+        TransfermarketIssueDTO teamData = teamClient.getMarketIssue();
+        model.addAttribute("teamData", teamData);
+        return "transfermarket";
     }
 
 }

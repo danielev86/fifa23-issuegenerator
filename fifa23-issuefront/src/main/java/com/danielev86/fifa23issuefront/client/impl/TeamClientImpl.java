@@ -2,6 +2,7 @@ package com.danielev86.fifa23issuefront.client.impl;
 
 import com.danielev86.fifa23issuefront.client.ITeamClient;
 import com.danielev86.fifa23issuefront.controller.dto.TeamIssueDTO;
+import com.danielev86.fifa23issuefront.controller.dto.TransfermarketIssueDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,11 @@ public class TeamClientImpl implements ITeamClient {
 
     public TeamIssueDTO getTeamIssue(){
         ResponseEntity<TeamIssueDTO> response = restTemplate.getForEntity(BASE_URI + "/teams/teamsissue", TeamIssueDTO.class);
+        return response.getBody();
+    }
+
+    public TransfermarketIssueDTO getMarketIssue(){
+        ResponseEntity<TransfermarketIssueDTO> response = restTemplate.getForEntity(BASE_URI + "/teams/marketissue", TransfermarketIssueDTO.class);
         return response.getBody();
     }
 }
