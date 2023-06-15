@@ -8,10 +8,11 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 public interface IFootballService {
-    Map<Integer, PlayerIssueDTO> getMapPlayerIssuers();
 
-    Map<Integer, TeamIssueDTO> getMapFinancialIssuers();
+    PlayerIssueDTO generatePlayerIssue();
 
-    Map<Integer, TransfermarketIssueDTO> getTransfermarketdto();
+    TeamIssueDTO generateTeamIssue();
+
+    TransfermarketIssueDTO generateTransferIssue();
 
 }

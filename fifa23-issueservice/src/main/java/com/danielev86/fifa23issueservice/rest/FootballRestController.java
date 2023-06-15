@@ -22,40 +22,17 @@ public class FootballRestController {
 
     @GetMapping("/players/playerissue")
     public PlayerIssueDTO getPlayerIssue(){
-        Map<Integer, PlayerIssueDTO> mapPlayers = footballService.getMapPlayerIssuers();
-        int randomNum = ThreadLocalRandom.current().nextInt(1, 27 + 1);
-        PlayerIssueDTO playerDTO = mapPlayers.get(randomNum);
-        if (playerDTO == null){
-            playerDTO = new PlayerIssueDTO();
-            playerDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
-        }else{
-            playerDTO.setPlayerNumber(ThreadLocalRandom.current().nextInt(1,18));
-        }
-        return playerDTO;
+        return footballService.generatePlayerIssue();
     }
 
     @GetMapping("/teams/teamsissue")
     public TeamIssueDTO getTeamIssue(){
-        Map<Integer, TeamIssueDTO> mapTeams = footballService.getMapFinancialIssuers();
-        int randomNum = ThreadLocalRandom.current().nextInt(1, 16 + 1);
-        TeamIssueDTO teamDTO = mapTeams.get(randomNum);
-        if (teamDTO == null){
-            teamDTO = new TeamIssueDTO();
-            teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
-        }
-        return teamDTO;
+        return footballService.generateTeamIssue();
     }
 
     @GetMapping("/teams/marketissue")
     public TransfermarketIssueDTO getTransfermarketIssue(){
-        Map<Integer, TransfermarketIssueDTO> mapTeams = footballService.getTransfermarketdto();
-        int randomNum = ThreadLocalRandom.current().nextInt(1, 20 + 1);
-        TransfermarketIssueDTO teamDTO = mapTeams.get(randomNum);
-        if (teamDTO == null){
-            teamDTO = new TransfermarketIssueDTO();
-            teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
-        }
-        return teamDTO;
+        return footballService.generateTransferIssue();
     }
 
 }
