@@ -7,10 +7,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Fifa23Utility {
 
-    public static final List<String> tacticts = (List<String>) Collections.unmodifiableCollection(Arrays.asList(
+    public static final List<String> tacticts = Arrays.asList(
             "3-4-3", "3-5-2", "3-4-1-2","3-4-2-1", "3-2-2-1-2"
             , "4-1-4-1","4-2-2-2", "4-2-1-3", "4-2-3-1", "4-3-3","4-3-1-2", "4-3-2-1", "4-1-2-3", "4-1-2-1-2", "4-4-2", "4-4-1-1"
-            , "5-2-3", "5-3-2", "5-4-1", "5-2-1-2"));
+            , "5-2-3", "5-3-2", "5-4-1", "5-2-1-2");
 
     public static String generateModule(){
         int randomNumber = generateRandomNumber(0, tacticts.size()-1);

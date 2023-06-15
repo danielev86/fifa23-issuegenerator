@@ -57,7 +57,8 @@ public class FootballServiceImpl implements IFootballService {
             teamDTO = new TransfermarketIssueDTO();
             teamDTO.setIssueType("Nessun Imprevisto Generato".toUpperCase());
         }else if (teamDTO != null && randomNum == 26){
-
+            String desc = teamDTO.getIssueDescription() + " " + Fifa23Utility.generateModule();
+            teamDTO.setIssueDescription(desc);
         }
         return teamDTO;
     }
