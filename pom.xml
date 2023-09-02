@@ -6,7 +6,7 @@
 
     <groupId>com.danielev86</groupId>
     <artifactId>fifa23-issuegenerator</artifactId>
-    <version>1.2.2-SNAPSHOT</version>
+    <version>1.2.2-RELEASE</version>
     <packaging>pom</packaging>
 
     <parent>
